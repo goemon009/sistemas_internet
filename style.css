@@ -1,0 +1,17 @@
+.elemento {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    margin:flex;
+    border-radius: 10px;
+}
+.elemento:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.elemento-vazio{
+    visibility: hidden;
+    padding: 10px;
+}
