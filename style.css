@@ -1,31 +1,60 @@
-
+/* Container principal - mantém a estrutura do grid */
 .container .row {
     display: flex;
     flex-wrap: wrap;
-    margin: -2px; /* Compensa o margin dos elementos */
+    margin: -2px;
+    margin-bottom: 4px;
 }
 
-[class*="col-md-"] {
-    padding: 2px !important; /* Reduzimos o padding padrão */
+/* Elemento base - corrigindo o alinhamento */
+.elemento {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 10px 6px 6px 6px; /* Topo: 10px, laterais/base: 6px */
+    text-align: center;
+    min-height: 60px;
+    width: 100%; /* Garante preenchimento total da coluna */
+    box-sizing: border-box; /* Fundamental! */
+    margin: 2px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Distribui o espaço */
 }
 
-.elemento, .elemento-vazio {
-    flex: 1;
-    border: 1px solid #000;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin: 2px; /* Espaçamento uniforme */
-    min-height: 50px;
+/* Número atômico - posicionamento absoluto SEM afetar o layout */
+.numero-atomico {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    font-size: 8px;
+    line-height: 1;
+}
+
+/* Símbolo - centralizado verticalmente */
+.simbolo {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px; /* Compensa o número atômico */
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Nome - alinhado na base */
+.nome-elemento {
+    font-size: 9px;
+    margin-top: auto; /* Empurra para baixo */
+    padding-bottom: 2px;
+    line-height: 1.1;
+}
+
+/* Elementos vazios - mantém o alinhamento */
 .elemento-vazio {
-    border-color: transparent;
-    visibility: visible; /* Mantemos visível para alinhamento */
+    visibility: hidden;
+    min-height: 60px;
+    padding: 10px;
+    margin: 2px;
+    border: 1px solid transparent;
 }
