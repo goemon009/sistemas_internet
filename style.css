@@ -1,17 +1,31 @@
-.elemento {
+
+.container .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2px; /* Compensa o margin dos elementos */
+}
+
+[class*="col-md-"] {
+    padding: 2px !important; /* Reduzimos o padding padrão */
+    display: flex;
+    flex-direction: column;
+}
+
+.elemento, .elemento-vazio {
+    flex: 1;
     border: 1px solid #000;
     text-align: center;
     padding: 10px;
     font-size: 14px;
-    margin:flex;
     border-radius: 10px;
-}
-.elemento:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+    margin: 2px; /* Espaçamento uniforme */
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.elemento-vazio{
-    visibility: hidden;
-    padding: 10px;
+.elemento-vazio {
+    border-color: transparent;
+    visibility: visible; /* Mantemos visível para alinhamento */
 }
