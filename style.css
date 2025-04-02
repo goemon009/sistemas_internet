@@ -1,71 +1,81 @@
-
-
-.elemento, .elemento-vazio {
-    height: 70px; /* Altura fixa */
+/* RESET COMPLETO DO LAYOUT */
+.container .row {
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
+    flex-wrap: nowrap !important;
+    align-items: flex-start;
+    margin: 0 -2px !important;
 }
 
-.elemento-vazio {
-    height: 70px; /* Mesma altura dos elementos */
-    visibility: hidden; /* Mantém o espaço reservado */
-    border: 1px solid transparent !important;
+/* CADA BLOCO PRINCIPAL */
+.col-md-4 {
+    display: flex !important;
+    flex-direction: column;
+    padding: 0 !important;
+    width: calc(100%/3) !important;
 }
 
-.col-md-4:nth-child(2) .row:nth-child(n+4) {
-    top: 28px; /* Experimente entre 20px-30px */
+/* LINHAS INTERNAS (CRUCIAL) */
+.col-md-4 > .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    margin: 0 !important;
+    min-height: 70px; /* Altura fixa */
 }
 
-.elemento {
-    position: relative;
-    display: inline-flex; /* Mantém comportamento inline */
+/* COLUNAS DOS ELEMENTOS */
+.col-md-2 {
+    flex: 0 0 calc(100%/6) !important;
+    max-width: calc(100%/6) !important;
+    padding: 2px !important;
+}
+
+/* ELEMENTOS (ESTILO UNIVERSAL) */
+.elemento, .elemento-vazio {
+    height: 70px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    position: relative;
     padding: 8px;
+    box-sizing: border-box;
+    min-width: 60px;
+    width: 100%;
 }
 
+/* ELEMENTOS VAZIOS */
+.elemento-vazio {
+    visibility: hidden;
+    border-color: transparent;
+}
+
+/* PARTES DO ELEMENTO */
 .numero-atomico {
     position: absolute;
     top: 4px;
     right: 6px;
-    font-size: 0.6em; /* Unidade relativa */
+    font-size: 10px;
 }
 
 .simbolo {
-    font-size: 1.5em;
-    margin-top: 0.8em;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
 }
 
 .nome-elemento {
-    font-size: 0.6em;
+    font-size: 10px;
     margin-top: auto;
-    text-align: center;
+    padding-bottom: 2px;
 }
 
-.titulo-principal {
-    text-align: center;
-    margin-bottom: 20px; /* Espaço extra opcional */
-}
-
-/* Ajuste específico para o elemento La-Lu */
+/* AJUSTE PARA ELEMENTOS LONGS */
 .elemento-lantanideos .simbolo {
-    font-size: 1.0em; /* Tamanho menor que o padrão */
-    line-height: 1.1; /* Melhora o espaçamento entre linhas */
-    padding: 0 2px; /* Adiciona espaço nas laterais */
-    word-break: break-word; /* Quebra palavra se necessário */
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 0 3px;
+    text-align: center;
 }
-
-/* Manter alinhamento vertical */
-.elemento-lantanideos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
