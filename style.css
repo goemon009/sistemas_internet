@@ -1,60 +1,71 @@
-/* Container principal - mantém a estrutura do grid */
-.container .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -2px;
-    margin-bottom: 4px;
+
+
+.elemento, .elemento-vazio {
+    height: 70px; /* Altura fixa */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
-/* Elemento base - corrigindo o alinhamento */
+.elemento-vazio {
+    height: 70px; /* Mesma altura dos elementos */
+    visibility: hidden; /* Mantém o espaço reservado */
+    border: 1px solid transparent !important;
+}
+
+.col-md-4:nth-child(2) .row:nth-child(n+4) {
+    top: 28px; /* Experimente entre 20px-30px */
+}
+
 .elemento {
     position: relative;
-    border: 1px solid #000;
-    border-radius: 8px;
-    padding: 10px 6px 6px 6px; /* Topo: 10px, laterais/base: 6px */
-    text-align: center;
-    min-height: 60px;
-    width: 100%; /* Garante preenchimento total da coluna */
-    box-sizing: border-box; /* Fundamental! */
-    margin: 2px;
-    display: flex;
+    display: inline-flex; /* Mantém comportamento inline */
     flex-direction: column;
-    justify-content: space-between; /* Distribui o espaço */
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
 }
 
-/* Número atômico - posicionamento absoluto SEM afetar o layout */
 .numero-atomico {
     position: absolute;
-    top: 2px;
+    top: 4px;
     right: 6px;
-    font-size: 8px;
-    line-height: 1;
+    font-size: 0.6em; /* Unidade relativa */
 }
 
-/* Símbolo - centralizado verticalmente */
 .simbolo {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 8px; /* Compensa o número atômico */
-    flex-grow: 1;
+    font-size: 1.5em;
+    margin-top: 0.8em;
+}
+
+.nome-elemento {
+    font-size: 0.6em;
+    margin-top: auto;
+    text-align: center;
+}
+
+.titulo-principal {
+    text-align: center;
+    margin-bottom: 20px; /* Espaço extra opcional */
+}
+
+/* Ajuste específico para o elemento La-Lu */
+.elemento-lantanideos .simbolo {
+    font-size: 1.0em; /* Tamanho menor que o padrão */
+    line-height: 1.1; /* Melhora o espaçamento entre linhas */
+    padding: 0 2px; /* Adiciona espaço nas laterais */
+    word-break: break-word; /* Quebra palavra se necessário */
+}
+
+/* Manter alinhamento vertical */
+.elemento-lantanideos {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Nome - alinhado na base */
-.nome-elemento {
-    font-size: 9px;
-    margin-top: auto; /* Empurra para baixo */
-    padding-bottom: 2px;
-    line-height: 1.1;
-}
-
-/* Elementos vazios - mantém o alinhamento */
-.elemento-vazio {
-    visibility: hidden;
-    min-height: 60px;
-    padding: 10px;
-    margin: 2px;
-    border: 1px solid transparent;
-}
