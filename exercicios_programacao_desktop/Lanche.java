@@ -6,40 +6,40 @@ public class Lanche {
 
         Scanner scanner = new Scanner(System.in);
         boolean loop = true;
-        int codigo = 0, qntde = 0;
-        double total = 0;
+        int codigo = 0;
+        double total = 0, qntde = 0;
 
         do{
             try{
                 System.out.println("Digite o código do produto: ");
                 codigo = scanner.nextInt();
                 System.out.println("Digite a quantidade");
-                qntde = scanner.nextInt();
+                qntde = scanner.nextDouble();
 
                 switch (codigo){
                     case 1:
                         double preco = 4;
-                        total = conta(preco, (double)qntde);
+                        total = conta(preco, qntde);
                         System.out.printf("Total: R$ %.2f\n", total);
                         break;
                     case 2:
                         preco = 4.5;
-                        total = conta(preco, (double)qntde);
+                        total = conta(preco, qntde);
                         System.out.printf("Total: R$ %.2f\n", total);
                         break;
                     case 3:
                         preco = 5;
-                        total = conta(preco, (double)qntde);
+                        total = conta(preco, qntde);
                         System.out.printf("Total: R$ %.2f\n", total);
                         break;
                     case 4:
                         preco = 2;
-                        total = conta(preco, (double)qntde);
+                        total = conta(preco, qntde);
                         System.out.printf("Total: R$ %.2f\n", total);
                         break;
                     case 5:
                         preco = 1.5;
-                        total = conta(preco, (double)qntde);
+                        total = conta(preco, qntde);
                         System.out.printf("Total: R$ %.2f\n", total);
                         break;
                     default:
