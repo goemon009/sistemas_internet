@@ -1,66 +1,42 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Lanche {
+public class ImpostoDeRenda {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        boolean loop = true;
-        int codigo = 0;
-        double total = 0, qntde = 0;
+        double salario;
 
-        do{
-            try{
-                System.out.println("Digite o código do produto: ");
-                codigo = scanner.nextInt();
-                System.out.println("Digite a quantidade");
-                qntde = scanner.nextDouble();
+        try{
+            System.out.println("Digite o seu salário: ");
+            salario = scanner.nextDouble();
 
-                switch (codigo){
-                    case 1:
-                        double preco = 4;
-                        total = conta(preco, qntde);
-                        System.out.printf("Total: R$ %.2f\n", total);
-                        break;
-                    case 2:
-                        preco = 4.5;
-                        total = conta(preco, qntde);
-                        System.out.printf("Total: R$ %.2f\n", total);
-                        break;
-                    case 3:
-                        preco = 5;
-                        total = conta(preco, qntde);
-                        System.out.printf("Total: R$ %.2f\n", total);
-                        break;
-                    case 4:
-                        preco = 2;
-                        total = conta(preco, qntde);
-                        System.out.printf("Total: R$ %.2f\n", total);
-                        break;
-                    case 5:
-                        preco = 1.5;
-                        total = conta(preco, qntde);
-                        System.out.printf("Total: R$ %.2f\n", total);
-                        break;
-                    default:
-                        throw new ArithmeticException("Código Inválido.");
-                }
-                loop = false;
-            }catch (InputMismatchException e){
-                System.err.println("Exception: " + e);
-                scanner.nextLine();
-                System.err.println("Insira um número válido");
-            }catch (ArithmeticException e){
-                System.err.println("Erro: " + e.getMessage());
-            }
-        }while (loop);
-
+            if(salario <= 2000.00){
+                System.out.println("Isento");
+            }else{
+                double calcImposto = imposto(salario);
+                System.out.printf("R$ %.2f\n", calcImposto);
+            }               
+            
+        }catch (InputMismatchException e){
+            System.err.println("Exception: " + e);
+            scanner.nextLine();
+            System.err.println("Insira um salário válido.");
+        }        
         scanner.close();
     }
 
-    public static double conta(double codigo, double qntde){
-        double total_conta;
-        total_conta = codigo * qntde;
-        return total_conta;
+    public static double imposto(double salario){
+        double imposto = 0;
+        if(salario > 4500.00){
+            imposto = imposto + (salario - 4500.00) * 0.28;
+            salario = 4500.00;
+        } else if (salario > 3000.00){
+            imposto = imposto + (salario - 3000.00) * 0.18;
+            salario = 3000.00;
+        } else if (salario > 2000){
+            imposto = imposto + (salario - 2000.00) * 0.08;
+        }
+        return imposto;
     }
 }
