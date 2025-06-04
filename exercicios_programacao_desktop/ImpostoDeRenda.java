@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ImpostoDeRenda {
@@ -6,10 +7,23 @@ public class ImpostoDeRenda {
         Scanner scanner = new Scanner(System.in);
         double salario;
 
-        System.out.println("Digite o seu salário: ");
-        salario = scanner.nextDouble();
+        try{
+            System.out.println("Digite o seu salário: ");
+            salario = scanner.nextDouble();
 
-
+            if(salario <= 2000.00){
+                System.out.println("Isento");
+            }else{
+                double calcImposto = imposto(salario);
+                System.out.printf("R$ %.2f\n", calcImposto);
+            }               
+            
+        }catch (InputMismatchException e){
+            System.err.println("Exception: " + e);
+            scanner.nextLine();
+            System.err.println("Insira um salário válido.");
+        }        
+        scanner.close();
     }
 
     public static double imposto(double salario){
