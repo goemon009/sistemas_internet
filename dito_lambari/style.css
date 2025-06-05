@@ -1,0 +1,138 @@
+/* Reset e estrutura */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 18px/1.4 Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.topo {
+    background-color: #005f73;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+hgroup > h1 {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+hgroup a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 ~ h2 {
+    font-size: 27px;
+    margin: 14px 0;
+    color: #eee;
+}
+
+/* Navegação */
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+nav > ul > li > a {
+    padding: 8px 12px;
+    background-color: #0a9396;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav > ul > li:first-child > a {
+    color: #c60;
+    text-decoration: none;
+}
+
+nav > ul > li:first-child > a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+nav > ul > li:last-child {
+    font-size: 26px;
+    list-style-type: square;
+}
+
+nav > ul > li:nth-child(3) {
+    background: #ccc;
+}
+
+nav > ul > li > a:hover {
+    background-color: #94d2bd;
+    color: #000;
+}
+
+nav > ul > li > a.corrente {
+    background-color: #ee9b00;
+    font-weight: bold;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    margin-bottom: 10px;
+}
+
+main ul {
+    list-style: disc inside;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #005f73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0a9396;
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 15px;
+    background-color: #005f73;
+    color: white;
+    border-radius: 10px;
+}
