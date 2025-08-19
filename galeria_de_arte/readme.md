@@ -1,18 +1,13 @@
-<img width="1051" height="748" alt="image" src="https://github.com/user-attachments/assets/5842a126-47f3-4e86-9515-34c920e9eebf" />
+<h2>Tutorial JPA - Disciplina Persistência Orientada a Objetos</h2>
 
-<br>
+<p>Esta é uma atividade Java Web chamado Galeria de Arte. Projeto realizado para a disciplina Persistência Orientada a Objetos do 4º Semestre no curso de Sistemas para Internet - IFMT.</p>
 
-<img width="1054" height="745" alt="image" src="https://github.com/user-attachments/assets/a4519c56-4e32-470d-8f8d-1cfec7fcc88f" />
-
-<br>
-
-<img width="1058" height="747" alt="image" src="https://github.com/user-attachments/assets/15cd4029-55ba-47de-90ee-8a1638925474" />
-
-<br>
-
-<img width="1054" height="741" alt="image" src="https://github.com/user-attachments/assets/132c1453-9a3f-4e83-9e78-56cfa97c7548" />
-
-
-
-
-
+<h2>Orientações</h2>
+<ul>
+  <li>Criar um projeto Java Web chamado Galeria de Arte</li>
+  <li>Usar o framework Hibernate</li>
+  <li>Apagar os arquivos do Hibernate 4.X que foram trazidos pela IDE Importar os JARs do MySQL Conector ( https://dev.mysql.com/downloads/connector/j/ ),     
+   Hibernate e JPA ( https://hibernate.org/orm/releases/5.4/ )
+   Apagar o hibernate.cfg.xml Crie uma unidade de persistência (persistence.xml).</li>
+</ul>
+<p>Obs.: Não coloque src/conf (netbeans)</p>
