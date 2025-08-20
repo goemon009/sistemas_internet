@@ -52,6 +52,10 @@
 <br>
 <ul><li>Nomeie o arquivo com o nome persistence e depois pode seguir no botão finish</li></ul>
 <img width="902" height="619" alt="image" src="https://github.com/user-attachments/assets/b55db797-cdfd-4873-b642-d2908498f3e9" />
+<img width="1706" height="815" alt="image" src="https://github.com/user-attachments/assets/016d3806-96ff-4c60-9f72-b695a73e76a3" />
+
+<br>
+<p>Criado por Leandro Campos Mendes</p>
 
 
 
